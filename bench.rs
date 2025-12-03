@@ -1,12 +1,11 @@
 #![feature(test)]
-extern crate test;
 extern crate fnv;
 extern crate fxhash;
 extern crate seahash;
+extern crate test;
 
 use std::hash::{Hash, Hasher};
-use test::{Bencher, black_box};
-
+use test::{black_box, Bencher};
 
 fn fnvhash<H: Hash>(b: H) -> u64 {
     let mut hasher = fnv::FnvHasher::default();
